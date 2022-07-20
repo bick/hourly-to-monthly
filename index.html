@@ -22,7 +22,8 @@ a {
   padding: 2rem 2rem;
 }
 .calculator .hourstomonths span {
-  margin: 0 0.5rem 0 1rem;
+  display: inline-block;
+  margin: 0 0 0 .5rem;
 }
 .calculator .hourstomonths input[type="number"] {
   padding: 0.5rem 1rem;
@@ -43,6 +44,41 @@ a {
   border-radius: 0.25rem;
   font-size: 1rem;
   margin-left: 0.5rem;
+}
+.calculator .hourstomonths #result {
+  display: inline-block;
+  font-weight: bold;
+}
+.container {
+    width: 100%;
+    padding-right: 15px;
+    padding-left: 15px;
+    margin-right: auto;
+    margin-left: auto;
+}
+
+@media (min-width: 576px) {
+    .container {
+        max-width: 540px;
+    }
+}
+
+@media (min-width: 768px) {
+    .container {
+        max-width: 720px;
+    }
+}
+
+@media (min-width: 992px) {
+    .container {
+        max-width: 960px;
+    }
+}
+
+@media (min-width: 1200px) {
+    .container {
+        max-width: 1280px;
+    }
 }
     </style>
 </head>
@@ -69,7 +105,6 @@ a {
               id="hourly"
             />
             <input type="button" value="Calculate" onClick="multiplyBy()" />
-            <br />
             <br />
             <br />
             Monthly cost: <span>$</span><div id="result"></div>
