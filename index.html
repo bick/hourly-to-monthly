@@ -1,12 +1,20 @@
 <!DOCTYPE html>
 <head>
-    <title>Hours to Monthly Cost Calculator</title>
+    <title>Hourly to Monthly Cost Calculator</title>
+    <meta name="keywords" content="hourly to monthly cost calculator"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1"/>
+    <meta name="x-ua-compatible" content="ie=edge"/>
+    <meta name="apple-mobile-web-app-title" content="Hours to Monthly Cost Calculator"/>
+    <meta name="application-name" content="Hours to Monthly Cost Calculator"/>
+    <meta name="theme-color" content="#ffffff"/>
+    <link rel="icon" type="image/x-icon" href="/favicon.ico">
     <style>
 html, body {
   padding: 0;
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen, Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
   font-size: 1rem;
+  max-height: 100vh;
 }
 a {
   color: inherit;
@@ -14,6 +22,10 @@ a {
 }
 * {
   box-sizing: border-box;
+}
+.header {
+  display: block;
+  margin: 3rem 0;
 }
 .calculator {
   margin-bottom: 2rem;
@@ -27,6 +39,9 @@ a {
 .calculator .hourstomonths span {
   display: inline-block;
   margin: 0 0 0 .5rem;
+}
+.calculator .hourstomonths .dollah {
+  font-weight: bold;
 }
 .calculator .hourstomonths input[type="number"] {
   padding: 0.5rem 1rem;
@@ -48,14 +63,24 @@ a {
   font-size: 1rem;
   margin-left: 0.5rem;
 }
-.calculator .hourstomonths #result {
+.calculator .hourstomonths #result1, .calculator .hourstomonths #result2 {
   display: inline-block;
   font-weight: bold;
 }
+footer {
+  display: block;
+margin: 3rem 0;
+}
+footer a {
+  color: #0969da;
+}
+footer a:hover {
+  text-decoration: underline;
+}
 .container {
     width: 100%;
-    padding-right: 15px;
-    padding-left: 15px;
+    padding-right: 1rem;
+    padding-left: 1rem;
     margin-right: auto;
     margin-left: auto;
 }
@@ -77,18 +102,12 @@ a {
         max-width: 960px;
     }
 }
-
-@media (min-width: 1200px) {
-    .container {
-        max-width: 1280px;
-    }
-}
     </style>
 </head>
 <body>
     <section class="header">
         <div class="container">
-          <h1>Hours to Months Price Calculator</h1>
+          <h1>Hourly to Monthly Price Calculator</h1>
           <p>
             A simple tool to convert the hourly cost of services to its monthly
             cost.
@@ -97,6 +116,7 @@ a {
       </section>
       <section class="calculator">
         <div class="container">
+          <p>Hourly to monthly calculator</p>
           <form class="hourstomonths">
             Cost per hour: <span>$</span>
             <input
@@ -110,40 +130,46 @@ a {
             <input type="button" value="Calculate" onClick="hourlytoMonthly()" />
             <br />
             <br />
-            Monthly cost: <span>$</span><div id="result"></div>
+            Monthly cost: <span class="dollah">$</span><div id="result1"></div>
           </form>
         </div>
       </section>
       <section class="calculator">
         <div class="container">
+          <p>Monthly to hourly calculator</p>
           <form class="hourstomonths">
             Cost per month: <span>$</span>
             <input
               type="number"
-              step="0.000001"
+              step="0.01"
               min="0"
-              max="100"
-              placeholder="0.05"
+              max="10000"
+              placeholder="35"
               id="monthly"
             />
-            <input type="button" value="Calculate" onClick="hourlytoMonthly()" />
+            <input type="button" value="Calculate" onClick="monthlytoHourly()" />
             <br />
             <br />
-            Monthly cost: <span>$</span><div id="result"></div>
+            Hourly cost: <span class="dollah">$</span><div id="result2"></div>
           </form>
         </div>
       </section>
+      <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7830708968124620"
+     crossorigin="anonymous"></script>
       <script>
-function hourlytoMonthly()
-{
+function hourlytoMonthly() {
         num1 = document.getElementById("hourly").value;
-        document.getElementById("result").innerHTML = num1 * 730;
+        document.getElementById("result1").innerHTML = num1 * 730;
 }
-function monthlytoHourly()
-{
+function monthlytoHourly() {
         num1 = document.getElementById("monthly").value;
-        document.getElementById("result").innerHTML = num1 / 730;
+        document.getElementById("result2").innerHTML = (num1 / 730).toFixed(3);
 }
       </script>
+      <footer>
+        <div class="container">
+        <p>Built by <a href="//owenbick.com">Owen Bick</a>. This project is open-source and utilizes the MIT license. You can view the repo <a href="//github.com/bick/hourlytomonthly">here</a>.</p>
+      </div>
+      </footer>
 </body>
 </html>
