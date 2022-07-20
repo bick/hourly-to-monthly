@@ -14,7 +14,7 @@
       </section>
       <section class="calculator">
         <div class="container">
-          <form class="hourstomonths" onSubmit={handleSubmit(doMath)}>
+          <form class="hourstomonths">
             Cost per hour: <span>$</span>
             <input
               type="number"
@@ -36,7 +36,7 @@
       <script>
 function multiplyBy()
 {
-        num1 = document.getElementById("firstNumber").value;
+        num1 = document.getElementById("hourly").value;
         document.getElementById("result").innerHTML = num1 * 730;
 }
       </script>
