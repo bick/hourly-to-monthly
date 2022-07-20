@@ -24,22 +24,21 @@
               placeholder="0.05"
               id="hourly"
             />
-            <input type="submit" value="Calculate" onclick="doMath()" />
+            <input type="submit" value="Calculate" onClick="multiplyBy()" />
             <br />
             <br />
             <br />
             Monthly cost: <span>$</span>
-            <div id="theProduct"></div>
+            <div id="result"></div>
           </form>
         </div>
       </section>
       <script>
-function doMath() {
-    var numOne = document.getElementById('hourly').value;
-    var theProduct = parseInt(numOne) * parseInt(730);
-    var p = document.getElementById('theProduct');
-    p.innerHTML += theProduct;
-  }
+function multiplyBy()
+{
+        num1 = document.getElementById("firstNumber").value;
+        document.getElementById("result").innerHTML = num1 * 730;
+}
       </script>
 </body>
 </html>
