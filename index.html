@@ -10,16 +10,31 @@
     <meta name="theme-color" content="#ffffff">
     <link rel="icon" type="image/x-icon" href="/favicon.ico">
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-4TV82Q62TY"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+
+        gtag('config', 'G-4TV82Q62TY');
+    </script>
     <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4778248135015291"
         crossorigin="anonymous"></script>
     <style>
         body,
         html {
-            padding: 0;
+            padding: 0 .5rem;
             margin: 0;
             font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen, Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
             font-size: 1rem;
             max-height: 100vh
+        }
+
+        @media (min-width: 1200px) {
+
+            body,
+            html {
+                padding: 0;
+            }
         }
 
         a {
@@ -48,7 +63,13 @@
             background: #f6f8fa;
             border: 1px solid #d8dee4;
             border-radius: .25rem;
-            padding: 2rem 2rem
+            padding: 2rem 1rem
+        }
+
+        @media (min-width: 768px) {
+            .calculator .hourstomonths {
+                padding: 2rem;
+            }
         }
 
         .calculator .hourstomonths span {
@@ -173,7 +194,7 @@
             </section>
             <footer>
                 <div class="container">
-                    <p>Built by <a href="//owenbick.com">Owen Bick</a>. This project is open-source and utilizes the MIT
+                    <p>&copy; <script>document.write(new Date().getFullYear())</script> HourlytoMonthly.com. Built by <a href="//owenbick.com">Owen Bick</a>. This project is open-source and utilizes the MIT
                         license. You can view the repo <a href="//github.com/bick/hourly-to-monthly">here</a>.</p>
                 </div>
             </footer>
