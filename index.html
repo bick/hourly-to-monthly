@@ -66,7 +66,16 @@
             padding: 2rem 1rem
         }
 
+        .github {
+            display: flex;
+        }
+
         @media (min-width: 768px) {
+            .github {
+                display: flex;
+                justify-content: flex-end;
+            }
+
             .calculator .hourstomonths {
                 padding: 2rem;
             }
@@ -117,16 +126,40 @@
         }
 
         footer {
-            display: block;
-            margin: 3rem 0
+            display: flex;
+            margin: 3rem 0;
+            width: 100%;
         }
 
         footer a {
-            color: #0969da
+            color: #0969da;
+            margin-left: .25rem;
         }
 
         footer a:hover {
             text-decoration: underline
+        }
+
+        footer p {
+            width: 100%;
+
+        }
+        footer .github {
+            display: block;
+            justify-content: flex-start;
+        }
+
+        @media (min-width: 768px) {
+
+            footer p {
+                display: flex;
+            }
+
+            footer .github {
+                display: flex;
+                justify-content: flex-end;
+                margin-left: auto;
+            }
         }
 
         .row {
@@ -193,13 +226,12 @@
                 </div>
             </section>
             <footer>
-                <div class="container">
-                    <p>&copy;
-                        <script>document.write(new Date().getFullYear())</script> HourlytoMonthly.com. Built by <a
-                            href="//owenbick.com">Owen Bick</a>. This project is open-source and utilizes the MIT
-                        license. You can view the repo <a href="//github.com/bick/hourly-to-monthly">here</a>.
-                    </p>
-                </div>
+                <p>&copy;
+                    <script>document.write(new Date().getFullYear())</script> HourlytoMonthly.com. Built by <a
+                        href="//owenbick.com">Owen Bick</a>. <a href="//github.com/bick/hourly-to-monthly"
+                        class="github"><img src="/github.svg" style="margin-right:.25rem;margin-left:auto">View on
+                        GitHub</a>
+                </p>
             </footer>
         </div>
         <div class="col-sm-3">
