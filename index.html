@@ -2,23 +2,27 @@
 
 <head>
     <title>Hourly to Monthly Cost Calculator</title>
-    <meta name="keywords" content="hourly to monthly cost calculator">
-    <meta name="viewport" content="width=device-width,initial-scale=1">
-    <meta name="x-ua-compatible" content="ie=edge">
-    <meta name="apple-mobile-web-app-title" content="Hours to Monthly Cost Calculator">
-    <meta name="application-name" content="Hours to Monthly Cost Calculator">
-    <meta name="theme-color" content="#ffffff">
-    <link rel="icon" type="image/x-icon" href="/favicon.ico">
+    <meta content="hourly to monthly cost calculator" name="keywords">
+    <meta content="width=device-width,initial-scale=1" name="viewport">
+    <meta content="ie=edge" name="x-ua-compatible">
+    <meta content="Hours to Monthly Cost Calculator" name="apple-mobile-web-app-title">
+    <meta content="Hours to Monthly Cost Calculator" name="application-name">
+    <meta content="#ffffff" name="theme-color">
+    <link href="/favicon.ico" rel="icon" type="image/x-icon">
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-4TV82Q62TY"></script>
     <script>
         window.dataLayer = window.dataLayer || [];
-        function gtag() { dataLayer.push(arguments); }
+
+        function gtag() {
+            dataLayer.push(arguments);
+        }
+
         gtag('js', new Date());
 
         gtag('config', 'G-4TV82Q62TY');
     </script>
-    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7830708968124620"
-        crossorigin="anonymous"></script>
+    <script async crossorigin="anonymous"
+            src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7830708968124620"></script>
     <style>
         body,
         html {
@@ -144,6 +148,7 @@
             width: 100%;
 
         }
+
         footer .github {
             display: block;
             justify-content: flex-start;
@@ -175,7 +180,7 @@
             width: 100%
         }
 
-        @media (min-width:768px) {
+        @media (min-width: 768px) {
             .col-sm-3 {
                 -ms-flex: 0 0 25%;
                 flex: 0 0 25%;
@@ -192,83 +197,86 @@
 </head>
 
 <body>
-    <div class="row">
-        <div class="col-sm-3">
+<div class="row">
+    <div class="col-sm-3">
 
-        </div>
-        <div class="col-sm-6">
-            <section class="header">
-                <div class="container">
-                    <h1>Hourly to Monthly Price Calculator</h1>
-                    <p>A simple tool to convert the hourly cost of services to its monthly cost.</p>
-                </div>
-            </section>
-            <section class="calculator">
-                <div class="container">
-                    <p>Hourly to monthly calculator</p>
-                    <form class="hourstomonths" onSubmit="return false;">Cost per hour:<span>$</span> <input
-                            type="number" step="0.000001" min="0" max="1000" placeholder="0.05" id="hourly"> <input
-                            type="button" value="Calculate" onclick="hourlytoMonthly()"><br><br>Monthly cost:<span
-                            class="dollah">$</span>
-                        <div id="result1"></div>
-                    </form>
-                </div>
-            </section>
-            <section class="calculator">
-                <div class="container">
-                    <p>Monthly to hourly calculator</p>
-                    <form class="hourstomonths" onSubmit="return false;">Cost per month:<span>$</span> <input
-                            type="number" step="0.01" min="0" max="100000" placeholder="35" id="monthly"> <input
-                            type="button" value="Calculate" onclick="monthlytoHourly()"><br><br>Hourly cost:<span
-                            class="dollah">$</span>
-                        <div id="result2"></div>
-                    </form>
-                </div>
-            </section>
-            <footer>
-                <p>&copy;
-                    <script>document.write(new Date().getFullYear())</script> HourlytoMonthly.com. Built by <a
-                        href="//owenbick.com">Owen Bick</a>. <a href="//github.com/bick/hourly-to-monthly"
-                        class="github"><img src="/github.svg" style="margin-right:.25rem;margin-left:auto">View on
-                        GitHub</a>
-                </p>
-            </footer>
-        </div>
-        <div class="col-sm-3">
-
-        </div>
     </div>
-    <script>
-        function hourlytoMonthly() {
-            const num1 = document.getElementById("hourly").value;
-            const result1 = document.getElementById("result1");
-            result1.innerHTML = (730 * num1).toLocaleString("en-US", { minimumFractionDigits: 2, maximumFractionDigits: 2 });
-        }
+    <div class="col-sm-6">
+        <section class="header">
+            <div class="container">
+                <h1>Hourly to Monthly Price Calculator</h1>
+                <p>A simple tool to convert the hourly cost of services to its monthly cost.</p>
+            </div>
+        </section>
+        <section class="calculator">
+            <div class="container">
+                <p>Hourly to monthly calculator</p>
+                <form class="hourstomonths" onSubmit="return false;">Cost per hour:<span>$</span> <input
+                        id="hourly" max="1000" min="0" placeholder="0.05" step="0.000001" type="number"> <input
+                        onclick="hourlytoMonthly()" type="button" value="Calculate"><br><br>Monthly cost:<span
+                        class="dollah">$</span>
+                    <div id="result1"></div>
+                </form>
+            </div>
+        </section>
+        <section class="calculator">
+            <div class="container">
+                <p>Monthly to hourly calculator</p>
+                <form class="hourstomonths" onSubmit="return false;">Cost per month:<span>$</span> <input
+                        id="monthly" max="100000" min="0" placeholder="35" step="0.01" type="number"> <input
+                        onclick="monthlytoHourly()" type="button" value="Calculate"><br><br>Hourly cost:<span
+                        class="dollah">$</span>
+                    <div id="result2"></div>
+                </form>
+            </div>
+        </section>
+        <footer>
+            <p>&copy;
+                <script>document.write(new Date().getFullYear())</script>
+                Hourly to Monthly Calculator. Built by <a
+                        href="//owenbick.com">Owen Bick</a>. <a class="github"
+                                                                href="//github.com/bick/hourly-to-monthly"><img src="/github.svg"
+                                                                                    style="margin-right:.25rem;margin-left:auto">View
+                    on
+                    GitHub</a>
+            </p>
+        </footer>
+    </div>
+    <div class="col-sm-3">
 
-        function monthlytoHourly() {
-            const num1 = document.getElementById("monthly").value;
-            const result2 = document.getElementById("result2");
-            result2.innerHTML = (num1 / 730).toLocaleString("en-US", { minimumFractionDigits: 2, maximumFractionDigits: 2 });
-        }
+    </div>
+</div>
+<script>
+    function hourlytoMonthly() {
+        const num1 = document.getElementById("hourly").value;
+        const result1 = document.getElementById("result1");
+        result1.innerHTML = (730 * num1).toLocaleString("en-US", {minimumFractionDigits: 2, maximumFractionDigits: 2});
+    }
 
-        document.addEventListener("DOMContentLoaded", () => {
-            const hourlyInput = document.getElementById("hourly");
-            const monthlyInput = document.getElementById("monthly");
-            hourlyInput.addEventListener("keyup", (event) => {
-                if (event.key === "Enter") {
-                    event.preventDefault();
-                    hourlytoMonthly();
-                }
-            });
-            monthlyInput.addEventListener("keyup", (event) => {
-                if (event.key === "Enter") {
-                    event.preventDefault();
-                    monthlytoHourly();
-                }
-            });
+    function monthlytoHourly() {
+        const num1 = document.getElementById("monthly").value;
+        const result2 = document.getElementById("result2");
+        result2.innerHTML = (num1 / 730).toLocaleString("en-US", {minimumFractionDigits: 2, maximumFractionDigits: 2});
+    }
+
+    document.addEventListener("DOMContentLoaded", () => {
+        const hourlyInput = document.getElementById("hourly");
+        const monthlyInput = document.getElementById("monthly");
+        hourlyInput.addEventListener("keyup", (event) => {
+            if (event.key === "Enter") {
+                event.preventDefault();
+                hourlytoMonthly();
+            }
         });
+        monthlyInput.addEventListener("keyup", (event) => {
+            if (event.key === "Enter") {
+                event.preventDefault();
+                monthlytoHourly();
+            }
+        });
+    });
 
-    </script>
+</script>
 </body>
 
 </html>
